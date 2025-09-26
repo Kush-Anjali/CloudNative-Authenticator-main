@@ -1,0 +1,21 @@
+[Unit]
+Description=WebApp Service
+After=network.target
+
+[Service]
+WorkingDirectory=/home/csye6225/cloud/webapp
+Environment=PORT=8000
+User=csye6225
+Group=csye6225
+Type=simple
+ExecStartPre=/usr/bin/bash -c "while [ ! -f /home/csye6225/cloud/workdone ]; do sleep 30; echo 'File not found, waiting...'; done;"
+ExecStart=python3.9 /home/csye6225/cloud/webapp/manage.py runserver 0.0.0.0:8000
+
+# Restart the service if it crashes or gets stopped
+Restart=always
+
+# Automatically log to systemd journal
+SyslogIdentifier=webapp
+
+[Install]
+WantedBy=multi-user.target

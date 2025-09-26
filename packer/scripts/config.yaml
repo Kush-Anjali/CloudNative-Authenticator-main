@@ -1,0 +1,20 @@
+logging:
+  receivers:
+    my_app_log:
+      type: files
+      include_paths:
+      - /var/log/myapp/app.log
+  processors:
+    parse_json:
+      type: parse_json
+      field: message
+    move_severity:
+      type: modify_fields
+      fields:
+        severity:
+          move_from: jsonPayload.severity
+  service:
+    pipelines:
+      default_pipeline:
+        receivers: [my_app_log]
+        processors: [parse_json, move_severity]
