@@ -3,8 +3,8 @@
 WebApp is a simple web application designed for cloud environments.
 
 For additional infrastructure resources related to this project, refer to the following repositories:
-1. [tf-gcp-infra](https://github.com/DeathOrg/tf-gcp-infra) - Infrastructure setup for Google Cloud Platform.
-2. [serverless](https://github.com/DeathOrg/serverless) - Repository for serverless architecture.
+1. [TerraForm-GCP-Infrastucture](https://github.com/Kush-Anjali/TerraForm-GCP-Infrastucture) - Infrastructure setup for Google Cloud Platform.
+2. [ServerLess](https://github.com/Kush-Anjali/ServerLess) - Repository for serverless architecture.
    
 ## Introduction
 
